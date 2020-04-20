@@ -1,6 +1,14 @@
 Holmust Test
 ====
 
+### TLDR; how this works
+
+ - Generate an infinite number of random values
+   - Through conduit -> feed random into inverse CDF fn
+   - Through conduit -> feed random into beta distribution fn
+ - through conduit -> fold the (inv CDF, waiting time) to calculate a TimeSeries
+   with queue times
+ - Feed the timesheet to the Answers module that (a bit crudely) answers forty-two
 
 ### Notes
 
