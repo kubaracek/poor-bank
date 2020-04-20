@@ -11,7 +11,7 @@ import Simulation (simulate)
 run = do
   [red, yellow, blue] <- mapM (simulate 1000) [Red, Yellow, Blue]
 
-  let waitingAll = map (map tWaiting) [red, yellow, blue]
+  let waitingAll = (map tWaiting) <$> [red, yellow, blue]
   let averageMaxWaitingAll = map averageMax waitingAll
   let waiting = Map.fromList $ zip ["Red", "Yellow", "Blue"] averageMaxWaitingAll 
 
